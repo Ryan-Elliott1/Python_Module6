@@ -4,7 +4,7 @@ from more_functions import validate_input_in_functions
 
 class FunctionTestCase(unittest.TestCase):
     def test_score_input_test_name(self):
-        self.assertEqual(validate_input_in_functions.score_input("math"), "math")
+        self.assertEqual(validate_input_in_functions.score_input("math"), "math: 0")
 
     def test_score_input_test_score_valid(self):
         self.assertEqual(validate_input_in_functions.score_input("math", 88), "math: 88")
