@@ -15,16 +15,19 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
     :param invalid_message: optional invalid message
     :returns test_name and test_score in a string
     """
-    check = isinstance(test_score, str)
-    if not check:
+    try:
         if test_score < 0 or test_score > 100:
             return invalid_message
-        test_name_and_score = (test_name + ": " + str(test_score))
-        return test_name_and_score
+        else:
+            test_name_and_score = (test_name + ": " + str(test_score))
+    except TypeError as err:
+        raise TypeError
     else:
-        return invalid_message
+        return test_name_and_score
 
 
 if __name__ == '__main__':
-    print(score_input("math", 85,))
-
+    try:
+        print(score_input("math", "test"))
+    except TypeError as err:
+        print("TypeError encountered")

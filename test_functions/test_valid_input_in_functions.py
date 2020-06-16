@@ -16,7 +16,8 @@ class FunctionTestCase(unittest.TestCase):
         self.assertEqual(validate_input_in_functions.score_input("math", 101), "Invalid test score, try again!")
 
     def test_test_score_non_numeric(self):
-        self.assertEqual(validate_input_in_functions.score_input("math", "test"), "Invalid test score, try again!")
+        with self.assertRaises(TypeError):
+            validate_input_in_functions.score_input("math", "test")
 
     def test_score_input_invalid_message(self):
         self.assertEqual(validate_input_in_functions.score_input("math", 95, "Bad score input"), "math: 95")
