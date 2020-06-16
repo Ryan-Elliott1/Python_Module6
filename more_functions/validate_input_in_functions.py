@@ -14,9 +14,11 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
     :param test_score:
     :returns message time n
     """
+    if test_score < 0 or test_score > 100:
+        return invalid_message
     test_name_and_score = (test_name + ": " + str(test_score))
     return test_name_and_score
 
 
 if __name__ == '__main__':
-    print(score_input("math"))
+    print(score_input("math", 101))
