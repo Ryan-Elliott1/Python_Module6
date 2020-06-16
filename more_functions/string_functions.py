@@ -14,4 +14,8 @@ def multiply_string(message, n):
     :param n, number of times
     :returns message time n
     """
-    pass
+    return message * n
+
+
+if __name__ == '__main__':
+    print(multiply_string("Python", 4))
